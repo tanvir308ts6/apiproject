@@ -37,3 +37,4 @@ Route::post("addnotice", [noticeController::class, 'addNotice']);
 //teacher api
 Route::get("teacher/{id?}", [teacherController::class, 'getTeacher']);
 Route::post("addTeacher", [teacherController::class, 'addTeacher']);
+Route::patch("updateTeacher/{id}", [teacherController::class, 'updateTeacher']);

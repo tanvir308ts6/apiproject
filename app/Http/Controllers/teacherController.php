@@ -17,7 +17,7 @@ class teacherController extends Controller
     {
         // $request->validate([
         //     'noticeName' => 'required',
-        //     
+        //
         // ]);
         $teacher = new teacher;
         $teacher->teacher_id = $request->teacher_id;
@@ -35,6 +35,29 @@ class teacherController extends Controller
         // echo 'Info'. $info;
         if ($info) {
             return ['result' => 'teacher info has been added Successfully.'];
+        } else {
+            return ['result' => 'Error'];
+        }
+    }
+
+
+    function updateTeacher(Request $request)
+    {
+        $teacher = teacher::find($request->id);
+        $teacher->teacher_id = $request->teacher_id;
+        $teacher->name = $request->name;
+        $teacher->email = $request->email;
+        $teacher->department = $request->department;
+        $teacher->faculty = $request->faculty;
+        $teacher->post = $request->post;
+        $teacher->degree1 = $request->degree1;
+        $teacher->degree2 = $request->degree2;
+        $teacher->degree3 = $request->degree3;
+        $teacher->phone = $request->phone;
+        $teacher->image = $request->image;
+        $info = $teacher->save();
+        if ($info) {
+            return ['result' => 'teacher info has been updated'];
         } else {
             return ['result' => 'Error'];
         }
