@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\teachercontroller;
+use App\Http\Controllers\ClassSeduilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,5 @@ Route::post("addnotice", [noticeController::class, 'addNotice']);
 Route::get("teacher/{id?}", [teacherController::class, 'getTeacher']);
 Route::post("addTeacher", [teacherController::class, 'addTeacher']);
 Route::patch("updateTeacher/{id}", [teacherController::class, 'updateTeacher']);
+// class rutine api
+Route::get("classSchedule", [ClassSeduilController::class, 'getclassSedule']);
