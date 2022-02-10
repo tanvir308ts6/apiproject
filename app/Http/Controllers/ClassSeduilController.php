@@ -7,11 +7,12 @@ use App\Models\classe;
 
 class ClassSeduilController extends Controller
 {
-    function getclassSedule()
+    function getclassSedule($id = null)
     {
-        $classeModel = new classe();
-        $data = $classeModel->getclass();
-        return response()->json($data);
+        return $id ? classe::find($id) : classe::all();
+        // $classeModel = new classe();
+        // $data = $classeModel->getclass();
+        // return response()->json($data);
     }
 
     function searchClass($batch)
