@@ -41,3 +41,5 @@ Route::post("addTeacher", [teacherController::class, 'addTeacher']);
 Route::patch("updateTeacher/{id}", [teacherController::class, 'updateTeacher']);
 // class rutine api
 Route::get("classSchedule", [ClassSeduilController::class, 'getclassSedule']);
+Route::get("searchClass/{for_batch?}", [ClassSeduilController::class, 'searchClass']);
+Route::post("AddClass", [ClassSeduilController::class, 'addClass']);
