@@ -9,6 +9,7 @@ use Illuminate\support\Facades\DB;
 class course extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     function getnotice()
         {
             $data = DB::table('courses')->get();

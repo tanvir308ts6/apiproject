@@ -46,3 +46,4 @@ Route::get("searchClass/{for_batch?}", [ClassSeduilController::class, 'searchCla
 Route::post("AddClass", [ClassSeduilController::class, 'addClass']);
 // course api
 Route::get("Course", [CourseController::class, 'showCourse']);
+Route::post("AddCourse", [CourseController::class, 'createCourse']);

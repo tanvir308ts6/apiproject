@@ -22,9 +22,21 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createCourse(Request $request)
     {
-        //
+        {
+            $course = new course;
+            $course->course_code = $request->course_code;
+            $course->name = $request->name;
+            $course->course_credit = $request->course_credit;
+            $info = $course->save();
+            // echo 'Info'. $info;
+            if ($info) {
+                return ['result' => 'course has been added Successfully.'];
+            } else {
+                return ['result' => 'Error'];
+            }
+        }
     }
 
     /**
