@@ -79,9 +79,18 @@ class CourseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateCourse(Request $request, $id)
     {
-        //
+        $course = course::find($request->id);
+        $course->course_code = $request->course_code;
+        $course->name = $request->name;
+        $course->course_credit = $request->course_credit;
+        $info = $course->save();
+        if ($info) {
+            return ['result' => 'course info has been updated'];
+        } else {
+            return ['result' => 'Error'];
+        }
     }
 
     /**

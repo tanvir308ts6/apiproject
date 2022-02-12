@@ -47,3 +47,4 @@ Route::post("AddClass", [ClassSeduilController::class, 'addClass']);
 // course api
 Route::get("Course", [CourseController::class, 'showCourse']);
 Route::post("AddCourse", [CourseController::class, 'createCourse']);
+Route::patch("UpadateCourse/{id}", [CourseController::class, 'updateCourse']);
