@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\teachercontroller;
 use App\Http\Controllers\ClassSeduilController;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,5 @@ Route::patch("updateTeacher/{id}", [teacherController::class, 'updateTeacher']);
 Route::get("classSchedule/{id?}", [ClassSeduilController::class, 'getclassSedule']);
 Route::get("searchClass/{for_batch?}", [ClassSeduilController::class, 'searchClass']);
 Route::post("AddClass", [ClassSeduilController::class, 'addClass']);
+// course api
+Route::get("Course", [CourseController::class, 'showCourse']);
